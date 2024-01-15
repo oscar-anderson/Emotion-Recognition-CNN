@@ -6,15 +6,23 @@ This repository contains a Python script that implements a Convolutional Neural 
 
 Convolutional Neural Networks (CNNs) are a type of deep learning model that use convolutional layers to apply filters (aka. kernels) to input data, to extract visual features such as those comprising edges, textures, and patterns. The network then learns by iteratively adjusting the parameters of these filters during training, optimising its ability to recognise and discriminate between different features (i.e. 'learning'). In the case of this project, our CNN learns the features of different emotions through training on input expressive face images (taken from the FER-2013 dataset), then applies this learning to classify emotions from new input face data.
 
-## Script structure
+## Contents
 
-- **Data loading and preprocessing:** The `load_data` function loads and preprocesses the training and testing data from the input respective folder paths. In the case of the training data, this is also augmented - so as to introduce variability in the training data, to ensure the network's learning is generalisable to a wider range of input testing data.
-- **CNN architecture:** The `create_CNN` function defines the architecture of the Convolutional Neural Network, comprising two convolutional layers with max-pooling, followed by a flattening layer and two dense layers. The final output layer uses the softmax activation function to output the probabilities for each emotion category.
-- **Model training:** The `train_model` function trains the CNN on the FER-2013 training data. Specifically, it takes batches of the training dataset and feeds this into the model. The model then updates its weights and biases through learning with this training data over a specified number of epochs.
-- **Model evaluation:** The `evaluate_model` function evaluates the trained model on the testing data, computing the metrics of loss and accuracy.
-- **Model performance visualisation:** The `plot_performance` function then generates plots visualising model's accuracy and loss throughout training and validation, over the epochs.
+### README.md
+-This file.
 
-Usage
+### Code/
+-This folder contains the Python script [`emotion-recognition-CNN.py`](https://github.com/oscar-anderson/Emotion-Recognition-CNN/blob/main/code/emotion_recognition_cnn.py), which implements the Emotion-Recognition Convolutional Neural Network. The script consists of the following functions:
+- `load_data`: This function loads and preprocesses the training and testing data from the input respective folder paths. In the case of the training data, this is also augmented - so as to introduce variability in the training data, to ensure the network's learning is generalisable to a wider range of input testing data.
+- `create_CNN`: This function defines the architecture of the Convolutional Neural Network, comprising two convolutional layers with max-pooling, followed by a flattening layer and two dense layers. The final output layer uses the softmax activation function to output the probabilities for each emotion category.
+- `train_model`: This function trains the CNN on the FER-2013 training data. Specifically, it takes batches of the training dataset and feeds this into the model. The model then updates its weights and biases through learning with this training data over a specified number of epochs.
+- `evaluate_model`: This function evaluates the trained model on the testing data, computing the metrics of loss and accuracy.
+- `plot_performance`: This function then generates plots visualising model's accuracy and loss throughout training and validation, over the epochs.
+
+### Report/
+-This folder contains the report on the Convolutional Neural Network, in both Markdown (.md) and Word document (.docx) formats.
+
+## Usage
 1. Ensure you have Python and the relevant dependencies (keras, matplotlib) installed:
 
    ```
