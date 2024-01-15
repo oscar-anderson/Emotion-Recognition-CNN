@@ -122,8 +122,7 @@ def plot_performance(history: History) -> None:
     - history: Keras History variable containing training metrics.
     """
     plt.figure(figsize = (12, 6))
-    plt.title('Emotion-Recognition Convolutional Neural Network Performance')
-
+    
     plt.subplot(1, 2, 1)
     plt.plot(history.epoch, history.history['accuracy'], label = 'Training', marker = 'o')
     plt.plot(history.epoch, history.history['val_accuracy'], label = 'Validation', marker = 'o')
