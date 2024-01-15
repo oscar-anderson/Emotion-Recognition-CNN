@@ -19,9 +19,6 @@ Convolutional Neural Networks (CNNs) are a type of deep learning model that use 
 - `evaluate_model`: This function evaluates the trained model on the testing data, computing the metrics of loss and accuracy.
 - `plot_performance`: This function then generates plots visualising model's accuracy and loss throughout training and validation, over the epochs.
 
-### Report/
--This folder contains the report on the Convolutional Neural Network, in both Markdown (.md) and Word document (.docx) formats.
-
 ## Usage
 1. Ensure you have Python and the relevant dependencies (keras, matplotlib) installed:
 
