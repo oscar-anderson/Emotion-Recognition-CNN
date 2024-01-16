@@ -23,7 +23,8 @@ def load_data(train_data_path: str, test_data_path: str) -> tuple:
         rescale = 1. / 255,
         shear_range = 0.2,
         zoom_range = 0.2,
-        horizontal_flip = True
+        horizontal_flip = True,
+        height_shift_range = 0.2
     )
 
     test_data_gen = ImageDataGenerator(rescale = 1. / 255)
@@ -55,17 +56,20 @@ def create_CNN() -> Sequential:
     """
     model = Sequential()
 
-    model.add(Conv2D(32, (3, 3), activation='relu', input_shape=(48, 48, 1)))
-    model.add(MaxPooling2D(pool_size=(2, 2)))
+    model.add(Conv2D(32, (3, 3), activation = 'relu', input_shape = (48, 48, 1)))
+    model.add(MaxPooling2D(pool_size = (2, 2)))
 
-    model.add(Conv2D(64, (3, 3), activation='relu'))
-    model.add(MaxPooling2D(pool_size=(2, 2)))
-
+    model.add(Conv2D(64, (3, 3), activation = 'relu'))
+    model.add(MaxPooling2D(pool_size = (2, 2)))
+    
+    model.add(Conv2D(128, (3, 3), activation = 'relu'))
+    model.add(MaxPooling2D(pool_size = (2, 2)))
+    
     model.add(Flatten())
 
-    model.add(Dense(128, activation='relu'))
+    model.add(Dense(192, activation = 'relu'))
 
-    model.add(Dense(7, activation='softmax'))
+    model.add(Dense(7, activation = 'softmax'))
 
     model.compile(
         loss ='categorical_crossentropy',
@@ -75,7 +79,7 @@ def create_CNN() -> Sequential:
 
     return model
 
-def train_model(model: Sequential, train_data_generator, test_data_generator, epochs: int = 10) -> History:
+def train_model(model: Sequential, train_data_generator, test_data_generator, epochs: int) -> History:
     """
     Train the neural network.
 
@@ -122,7 +126,8 @@ def plot_performance(history: History) -> None:
     - history: Keras History variable containing training metrics.
     """
     plt.figure(figsize = (12, 6))
-    
+    plt.suptitle('Emotion-Recognition Convolutional Neural Network Performance')
+
     plt.subplot(1, 2, 1)
     plt.plot(history.epoch, history.history['accuracy'], label = 'Training', marker = 'o')
     plt.plot(history.epoch, history.history['val_accuracy'], label = 'Validation', marker = 'o')
@@ -150,7 +155,7 @@ test_data_path = 'C:/Users/Oscar/Documents/Projects/fer2013_emotion_detection/te
 
 train_data_generator, test_data_generator = load_data(train_data_path, test_data_path)
 model = create_CNN()
-history = train_model(model, train_data_generator, test_data_generator)
+history = train_model(model, train_data_generator, test_data_generator, epochs = 40)
 loss, accuracy = evaluate_model(model, test_data_generator)
 
 print(f'Loss: {loss:.4f}%')
