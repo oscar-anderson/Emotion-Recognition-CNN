@@ -1,6 +1,6 @@
 # Emotion-Recognition Convolutional Neural Network
 
-This repository contains a Python script that implements a Convolutional Neural Network capable of identifying emotions from input face image data. The network was developed using Keras and trained on the FER-2013 dataset of expressive face images. The purpose of this script was to allow me to practice my skills in producing clean Python code, as well as develop my understanding in the field of deep learning. Completion of this project was achieved using a number of online tutorials and documentation.
+This repository contains a Python script that implements a Convolutional Neural Network for recognising emotions from input face image data. The network was developed using Keras and trained on the FER-2013 dataset of expressive face images. The purpose of this script was to allow me to practice my skills in producing clean Python code, as well as develop my understanding in the field of deep learning. Completion of this project was achieved using a range of online resources and documentation.
 
 ## Overview
 
