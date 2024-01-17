@@ -8,6 +8,8 @@ Convolutional Neural Networks (CNNs) are a type of deep learning model that use 
 
 ## Contents
 
+This repository is made up of the following:
+
 ### README.md
 -This file.
 
@@ -20,6 +22,9 @@ Convolutional Neural Networks (CNNs) are a type of deep learning model that use 
 - `plot_performance`: This function then generates plots visualising model's accuracy and loss throughout training and validation, over the epochs.
 
 ## Usage
+
+To run the CNN from this repository:
+
 1. Ensure you have Python and the relevant dependencies (keras, matplotlib) installed:
 
    ```
