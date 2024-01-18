@@ -15,7 +15,7 @@ This repository is made up of the following:
 
 ### Code/
 -This folder contains the Python script [`emotion-recognition-CNN.py`](https://github.com/oscar-anderson/Emotion-Recognition-CNN/blob/main/code/emotion_recognition_cnn.py), which implements the Emotion-Recognition Convolutional Neural Network. The script consists of the following functions:
-- `load_data`: This function loads and preprocesses the training and testing data from the input respective folder paths. In the case of the training data, this is also augmented - so as to introduce variability in the training data, to ensure the network's learning is generalisable to a wider range of input testing data.
+- `load_data`: This function loads and preprocesses the training and testing data from the input respective folder paths. In the case of the training data, this is also augmented - so as to introduce variability and to ensure the network's learning is generalisable to a wider range of input testing data.
 - `create_CNN`: This function defines the architecture of the Convolutional Neural Network, comprising three convolutional layers with max-pooling, followed by a flattening layer and two dense layers. The final output layer uses the softmax activation function to output the probabilities for each emotion category.
 - `train_model`: This function trains the CNN on the FER-2013 training data. Specifically, it takes batches of the training dataset and feeds this into the model. The model then updates its weights and biases through learning with this training data over a specified number of epochs.
 - `evaluate_model`: This function evaluates the trained model on the testing data, computing the metrics of loss and accuracy.
