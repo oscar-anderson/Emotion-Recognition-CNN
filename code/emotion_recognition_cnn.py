@@ -1,4 +1,11 @@
-# Emotion-Recognition Convolutional Neural Network.
+"""
+Emotion-Recognition Convolutional Neural Network.
+
+This script defines a Convolutional Neural Network (CNN) for facial emotion
+recognition, trained on the FER-2013 dataset. It includes functions for loading
+and preprocessing data, creating the CNN, training the model, then evaluating
+and visualising its performance.
+"""
 
 # Import dependencies.
 from keras.models import Sequential
